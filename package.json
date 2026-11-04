@@ -1,0 +1,8 @@
+{
+  "name": "trayecto-bitacora",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "deploy:pages": "npx wrangler pages deploy . --project-name=trayecto-bitacora"
+  }
+}
