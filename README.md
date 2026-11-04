@@ -1,23 +1,28 @@
 # TRAYECTO · Bitácora creativa interactiva
 
-Sitio estático editorial para presentar el proyecto de identidad y señalética urbana TRAYECTO, siguiendo los nueve capítulos de la bitácora.
+Sitio web estático de la bitácora creativa del sistema de identidad y señalética urbana TRAYECTO para Santa Marta.
 
-## Contenido publicado
-- `index.html`: navegación por capítulos, contenido editorial, identidad cromática, módulo de construcción del logotipo, accesibilidad y ambiente generativo.
-- `.github/workflows/deploy-pages.yml`: publicación mediante GitHub Actions.
-- `wrangler.toml`: nombre y directorio de publicación para Cloudflare Pages.
-- `_headers`: reglas básicas de seguridad y caché.
+## Archivos principales
+- `index.html`: contenido organizado en nueve capítulos, índice interactivo y navegación.
+- `css/styles.css`: estilos editoriales, paleta de identidad, diseño adaptable y estados de accesibilidad.
+- `js/main.js`: interacción del índice, ajustes de lectura, rutas animadas, copia de HEX, construcción progresiva del logotipo y ambiente generativo.
+- `404.html`: pantalla de ruta no encontrada.
+- `_headers`: cabeceras para hosting estático.
+- `wrangler.toml`: configuración mínima del proyecto Cloudflare Pages.
 
 ## Cloudflare Pages
-Conecta el repositorio a Cloudflare Pages:
+En Workers & Pages → Create → Pages → Connect to Git:
+- Repository: `luisantolinez-cmyk/Trayecto`
 - Production branch: `main`
 - Framework preset: `None`
 - Build command: `exit 0`
-- Build output directory: `/` (raíz)
-- Root directory: vacío.
+- Build output directory: `.`
+- Root directory: vacío
+
+El proyecto es HTML/CSS/JavaScript puro: no necesita dependencias ni comando de compilación.
 
 ## GitHub Pages
-Activa Settings → Pages → Build and deployment → Source: GitHub Actions. El workflow publica la raíz del repositorio.
+El repositorio incluye un workflow de validación del sitio. Para publicarlo también en GitHub Pages, activa Settings → Pages → Build and deployment → Source: GitHub Actions y añade el workflow oficial de Pages o utiliza Cloudflare Pages como destino principal.
 
-## Nota de recursos
-Esta primera publicación incluye la arquitectura editorial y los módulos interactivos en un HTML autocontenido. Los archivos binarios originales (fotografías, pictogramas de raster, fuentes WOFF2 y audios) todavía requieren una transferencia binaria a GitHub; el reproductor tiene ambiente generativo y no simula que se haya incluido una pista original. La sección tipográfica informa que Onely Sans y Gotham deben añadirse con sus licencias correspondientes.
+## Alcance de los recursos
+La versión publicada contiene la experiencia editorial e interacciones en archivos separados. Por una limitación de transferencia binaria de esta conexión no ha sido posible subir los archivos binarios del paquete original (fotografías, mockups, pictogramas rasterizados y tipografías WOFF2). La página no simula que esos archivos estén disponibles. El reproductor utiliza ambiente generativo; el ZIP de origen no incluía una pista de sonido.
