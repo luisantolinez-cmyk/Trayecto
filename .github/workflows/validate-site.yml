@@ -12,10 +12,12 @@ jobs:
       - uses: actions/checkout@v4
       - name: Verify site files
         run: |
+          set -eu
           test -f index.html
           test -f css/styles.css
           test -f js/main.js
           test -f 404.html
           grep -q "TRAYECTO" index.html
-          grep -q "chapterNav" js/main.js
+          grep -q "textUp" js/main.js
+          grep -q "facc15" css/styles.css
           echo "TRAYECTO static site structure verified."
